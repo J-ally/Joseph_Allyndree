@@ -20,29 +20,38 @@
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
                 <p class="name" style="text-align: center;">
-                  Joseph Allyndrée
+                  Joseph ALLYNDRÉE
                 </p>
-                <p>I'm a research scientist at <a href="https://www.inrae.fr/">INRAE</a> in Paris & Nantes, where I am currently doing a PhD. My research mainly focuses on NeRF.
+                <p>I'm a research scientist at <a href="https://www.inrae.fr/">INRAE</a>. Working in the <a href="https://www.inrae.fr/">MIA</a> & 
+                the <a href="https://www.inrae.fr/">BIOEPAR</a> research labs, where 
+                I am currently doing my PhD (the <a href="https://sanba.hub.inrae.fr/rubriques-verticales2/nos-actions/theses/j.-allyndree-these-pace-cow-2023-2026">PACE-COW</a> project). <br><br>
+                
+                My research explores how artificial intelligence can help us better understand and care for animals. I focus on
+                developing tools that automatically detect and quantify cattle behaviour using video, accelerometers, and proximity
+                sensors. By combining computer vision, deep learning, and ethology, we try to detect diseases before they become 
+                visible to the human eye.<br><br>
+                
+                Within the PACE-COW project, I design multi-sensor pipelines that synchronize large volumes
+                of barn data to reconstruct the daily life of dairy cows. This includes :<br>
+                - designing and testing methods for annotating large amount of video data (detection, tracking and classification of cows
+                in videos) and validating them against real observations<br>
+                - training models for behaviour classification from accelerometer data (Time Series Classification)<br>
+                - analysing how time budgets relate to animal welfare and health.<br><br>
+                
+                My broader goal is to bridge the gap between AI research and practical farming, making Precision Livestock Farming technologies 
+                both scientifically rigorous and genuinely useful for farmers, veterinarians, and welfare scientists.
                 </p>
-                <p>
-                  I am the proud holder<a href="https://www.google.com/glass/start/">Glass</a>,  <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://blog.google/products/google-ar-vr/introducing-next-generation-jump/">VR</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, <a href="https://ai.googleblog.com/2020/12/portrait-light-enhancing-portrait.html">Portrait Light</a>, and <a href="https://blog.google/products/maps/three-maps-updates-io-2022/">Maps</a>. I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a>. I've received the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>.
-                </p>
+                
                 <p style="text-align:center">
                   <a href="mailto:joseph.allyndree@inrae.fr">Email</a> &nbsp;/&nbsp;
                   <a href="/data/Joseph_ALLYNDREE_CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <!--
-                  <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://www.threads.net/@jonbarron">Threads</a> &nbsp;/&nbsp;
-				          <a href="https://bsky.app/profile/jonbarron.bsky.social">Bluesky</a> &nbsp;/&nbsp;
-                -->
-
                   <a href="https://twitter.com/JAllyndree">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/J-ally/">Github</a>
+                  <a href="https://github.com/J-ally/">Github</a>&nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=jqy3zjgAAAAJ&hl=fr">Scholar</a>
                 </p>
               </td>
               <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="https://pbs.twimg.com/profile_images/1676706521114198016/_R6cFp4g_400x400.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo">
+                <img src = "https://media.licdn.com/dms/image/v2/D4D03AQGXuhkO1pdx3w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719306446895?e=1762992000&v=beta&t=HfRi4zdI-CIrgCxvoKy_zX9CKYNboRpYBizrkburqoQ" style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo">
               </td>
             </tr>
           </tbody></table>
@@ -51,22 +60,77 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. Representative papers are <span class="highlight">highlighted</span>.
+                  I'm interested in computer vision, time-series, deep learning, and multimodal AI for animal behaviour analysis. Most of my research
+                  focuses on inferring cattle activity and welfare from sensor data.
                 </p>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
 
+            <!-- 
+          <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffd0">
+          <td style="padding:16px;width:20%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='bolt3d_image'><video width=100% height=100% muted autoplay loop>
+                  <source src="images/bolt3d.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
 
+                </video></div>
+              <img src='images/bolt3d.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function bolt3d_start() {
+                document.getElementById('bolt3d_image').style.opacity = "1";
+              }
+
+              function bolt3d_stop() {
+                document.getElementById('bolt3d_image').style.opacity = "0";
+              }
+              bolt3d_stop()
+            </script>
+          </td>
+          <td style="padding:8px;width:80%;vertical-align:middle">
+            <a href="https://szymanowiczs.github.io/bolt3d">
+              <span class="papertitle">Bolt3D: Generating 3D Scenes in Seconds</span>
+            </a>
+            <br>
+            <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
+            <a href="https://jasonyzhang.com">Jason Y. Zhang</a>,
+            <a href="https://pratulsrinivasan.github.io">Pratul Srinivasan</a>,
+            <a href="https://ruiqigao.github.io">Ruiqi Gao</a>,
+            <a href="https://github.com/ArthurBrussee">Arthur Brussee</a>,
+            <a href="https://holynski.org">Aleksander Holynski</a>,
+            <a href="https://ricardomartinbrualla.com">Ricardo Martin-Brualla</a>,
+            <strong>Jonathan T. Barron</strong>,
+            <a href="https://henzler.github.io">Philipp Henzler</a>
+            <br>
+            <em>ICCV</em>, 2025
+            <br>
+            <a href="https://szymanowiczs.github.io/bolt3d">project page</a>
+            /
+            <a href="https://szymanowiczs.github.io/bolt3d">arXiv</a>
+            <p></p>
+            <p>
+              By training a latent diffusion model to directly output 3D Gaussians we enable fast (~6 seconds on a single GPU)
+              feed-forward 3D scene generation.
+            </p>
+          </td>
+        </tr>
+
+-->
             
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
-                <p style="text-align:right;font-size:small;">
-                  Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page.
+                <p style="text-align:middle;font-size:small;">
+                  Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a> which I modified. <strong>Do 
+                  not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the 
+                  github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> 
+                  of the original page.
                 </p>
               </td>
             </tr>
