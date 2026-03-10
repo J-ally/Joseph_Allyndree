@@ -168,9 +168,9 @@
                   </div>
                   <script>
                     (function () {
-                      var API = 'https://api.archives-ouvertes.fr/search/' +
+                      var API = 'https://api.hal.science/search/' +
                         '?q=authIdHal_s:joseph-allyndree' +
-                        '&fl=title_s,authFullName_s,producedDate_s,journalTitle_s,conferenceTitle_s,docType_s,uri_s,halId_s' +
+                        '&fl=title_s,authFullName_s,producedDate_s,journalTitle_s,conferenceTitle_s,docType_s,halId_s' +
                         '&sort=producedDate_tdate+desc&rows=30&wt=json';
 
                       var TYPE_LABEL = {
@@ -200,13 +200,15 @@
                             var authors = (doc.authFullName_s || []).join(', ');
                             var venue = doc.journalTitle_s || doc.conferenceTitle_s || '';
                             var type = TYPE_LABEL[doc.docType_s] || doc.docType_s || '';
-                            var url = doc.uri_s || ('https://hal.science/' + (doc.halId_s || ''));
+                            var url = 'https://hal.science/' + (doc.halId_s || '');
 
                             var item = document.createElement('p');
                             item.style.marginBottom = '14px';
 
                             var link = document.createElement('a');
-                            link.href = /^https?:\/\//.test(url) ? url : '#';
+                            link.href = url;
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
                             link.textContent = title;
                             link.style.fontWeight = '600';
                             item.appendChild(link);
