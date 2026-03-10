@@ -30,7 +30,7 @@
                 <a href="mailto:joseph.allyndree@inrae.fr">Email</a> &nbsp;/&nbsp;
                 <a href="data/Joseph_ALLYNDREE_CV.pdf">CV</a> &nbsp;/&nbsp;
                 <a href="https://github.com/J-ally/">Github</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=jqy3zjgAAAAJ&hl=fr">Google Scholar</a>
+                <a href="https://scholar.google.com/citations?user=jqy3zjgAAAAJ&hl=fr">Google Scholar</a> &nbsp;/&nbsp;
                 <a href="https://hal.science/search/index/q/*/authIdHal_s/joseph-allyndree">HAL</a>
               </p>
             </div>
@@ -150,6 +150,7 @@
 
             </tbody>
           </table>
+          <hr style="border:none;border-top:1px solid #e0e0e0;margin:10px 0;">
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
@@ -229,6 +230,12 @@
                             item.appendChild(meta);
 
                             container.appendChild(item);
+
+                            var hr = document.createElement('hr');
+                            hr.style.border = 'none';
+                            hr.style.borderTop = '1px solid #e0e0e0';
+                            hr.style.margin = '0 0 14px 0';
+                            container.appendChild(hr);
                           });
                         })
                         .catch(function () {
@@ -251,8 +258,8 @@
     modified. Do not scrape the HTML from this page itself, as it includes analytics tags that you do not want on
     your own website &mdash;
     use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a
-      href="https://github.com/leonidk/new_website">Jekyll fork</a> of the original page. Website icon from <a
-      href="https://www.flaticon.com/authors/prashanth-rapolu">Prashanth Rapolu</a>
+      href="https://github.com/leonidk/new_website">Jekyll fork</a> of the original page. <br><br>
+    Website icon from <a href="https://www.flaticon.com/authors/prashanth-rapolu">Prashanth Rapolu</a> <br><br>
 
     Last updated: <span id="last-updated"></span> &nbsp;&mdash;&nbsp;
     <script>
