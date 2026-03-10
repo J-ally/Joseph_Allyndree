@@ -91,6 +91,11 @@ a {
   font-size: 16px;
 }
 
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 a {
   font-size: inherit;
 }
