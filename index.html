@@ -163,42 +163,75 @@
               </tr>
               <tr>
                 <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
-                  <style type="text/css">
-                    #hal-publications-iframe {
-                      border-width: 0;
-                      overflow: scroll;
-                      background-color: transparent;
-                      width: 100%;
-                      min-height: 700px;
-                    }
-                  </style>
-                  <iframe id="hal-publications-iframe" title="My latest publications"
-                    allow="accelerometer;autoplay;camera;encrypted-media;geolocation;gyroscope;microphone;payment;picture-in-picture"
-                    src="https://hal.science/search/index/?q=authIdHal_s%3Ajoseph-allyndree&rows=30&sort=producedDate_tdate+desc">
-                    Your browser does not support iframes, but you can visit
-                    <a
-                      href="https://hal.science/search/index/?q=authIdHal_s%3Ajoseph-allyndree&rows=30&sort=producedDate_tdate+desc">my
-                      publications on HAL</a>.
-                  </iframe>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0px">
-                  <br>
-                  <p style="text-align:middle;font-size:small;">
-                    Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source
-                      code</a> which I modified. <strong>Do
-                      not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not
-                    want on your own website &mdash; use the
-                    github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a
-                      href="https://github.com/leonidk/new_website">Jekyll fork</a>
-                    of the original page.
-                  </p>
+                  <div id="hal-publications-list">
+                    <p id="hal-loading" style="color:#888;font-style:italic;">Loading publications from HAL…</p>
+                  </div>
+                  <script>
+                    (function () {
+                      var API = 'https://api.archives-ouvertes.fr/search/' +
+                        '?q=authIdHal_s:joseph-allyndree' +
+                        '&fl=title_s,authFullName_s,producedDate_s,journalTitle_s,conferenceTitle_s,docType_s,uri_s,halId_s' +
+                        '&sort=producedDate_tdate+desc&rows=30&wt=json';
+
+                      var TYPE_LABEL = {
+                        ART: 'Journal article', COMM: 'Conference paper',
+                        POSTER: 'Poster', THESE: 'PhD thesis',
+                        REPORT: 'Technical report', COUV: 'Book chapter', OUV: 'Book'
+                      };
+
+                      fetch(API)
+                        .then(function (r) { return r.json(); })
+                        .then(function (data) {
+                          var docs = data.response.docs;
+                          var container = document.getElementById('hal-publications-list');
+                          var loadingEl = document.getElementById('hal-loading');
+                          if (loadingEl) loadingEl.remove();
+
+                          if (!docs || !docs.length) {
+                            var msg = document.createElement('p');
+                            msg.textContent = 'No publications found.';
+                            container.appendChild(msg);
+                            return;
+                          }
+
+                          docs.forEach(function (doc) {
+                            var year = (doc.producedDate_s || '').slice(0, 4);
+                            var title = (doc.title_s || ['Untitled'])[0];
+                            var authors = (doc.authFullName_s || []).join(', ');
+                            var venue = doc.journalTitle_s || doc.conferenceTitle_s || '';
+                            var type = TYPE_LABEL[doc.docType_s] || doc.docType_s || '';
+                            var url = doc.uri_s || ('https://hal.science/' + (doc.halId_s || ''));
+
+                            var item = document.createElement('p');
+                            item.style.marginBottom = '14px';
+
+                            var link = document.createElement('a');
+                            link.href = /^https?:\/\//.test(url) ? url : '#';
+                            link.textContent = title;
+                            link.style.fontWeight = '600';
+                            item.appendChild(link);
+                            item.appendChild(document.createElement('br'));
+
+                            var auth = document.createElement('span');
+                            auth.style.color = '#444';
+                            auth.textContent = authors;
+                            item.appendChild(auth);
+                            item.appendChild(document.createElement('br'));
+
+                            var meta = document.createElement('span');
+                            meta.style.color = '#888';
+                            meta.textContent = (venue ? venue + ' \u2014 ' : '') + year + (type ? ' \u00b7 ' + type : '');
+                            item.appendChild(meta);
+
+                            container.appendChild(item);
+                          });
+                        })
+                        .catch(function () {
+                          var el = document.getElementById('hal-loading');
+                          if (el) el.textContent = 'Could not load publications. View them on HAL directly.';
+                        });
+                    }());
+                  </script>
                 </td>
               </tr>
             </tbody>
@@ -206,6 +239,15 @@
         </td>
       </tr>
   </table>
+  <footer
+    style="text-align:center;padding:20px;margin-top:10px;border-top:1px solid #e0e0e0;font-size:small;color:#888;">
+    Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a> which I
+    modified.
+    <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on
+    your own website &mdash;
+    use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a
+      href="https://github.com/leonidk/new_website">Jekyll fork</a> of the original page.
+  </footer>
 </body>
 
 </html>
