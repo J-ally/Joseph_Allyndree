@@ -21,11 +21,11 @@
         <td style="padding:0px">
           <!-- Banner -->
           <header
-            style="display:flex;align-items:center;gap:18px;padding:20px 2.5%;border-bottom:1px solid #e0e0e0;margin-bottom:8px;">
+            style="display:flex;align-items:center;gap:24px;padding:24px 2.5%;border-bottom:1px solid #e0e0e0;margin-bottom:8px;">
             <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=jqy3zjgAAAAJ&citpid=3"
-              style="width:65px;height:65px;object-fit:cover;border-radius:50%;flex-shrink:0;" alt="profile photo">
+              style="width:110px;height:110px;object-fit:cover;border-radius:50%;flex-shrink:0;" alt="profile photo">
             <div>
-              <p class="name" style="margin:0;font-size:26px;">Joseph ALLYNDRÉE</p>
+              <p class="name" style="margin:0;font-size:34px;">Joseph ALLYNDRÉE</p>
               <p style="margin:4px 0 0 0;font-size:14px;color:#555;">
                 <a href="mailto:joseph.allyndree@inrae.fr">Email</a> &nbsp;/&nbsp;
                 <a href="data/Joseph_ALLYNDREE_CV.pdf">CV</a> &nbsp;/&nbsp;
@@ -244,12 +244,19 @@
   </table>
   <footer
     style="text-align:center;padding:20px;margin-top:10px;border-top:1px solid #e0e0e0;font-size:small;color:#888;">
+
     Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a> which I
-    modified.
-    <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on
+    modified. Do not scrape the HTML from this page itself, as it includes analytics tags that you do not want on
     your own website &mdash;
     use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a
       href="https://github.com/leonidk/new_website">Jekyll fork</a> of the original page.
+
+    Last updated: <span id="last-updated"></span> &nbsp;&mdash;&nbsp;
+    <script>
+      var d = new Date(document.lastModified);
+      document.getElementById('last-updated').textContent =
+        d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    </script>
   </footer>
 </body>
 
