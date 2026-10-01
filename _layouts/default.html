@@ -12,16 +12,17 @@
   <link rel="icon" type="image/png" sizes="512x512" href="{{ '/images/favicon/eating_blue.png' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" type="text/css" href="{{ '/stylesheet.css' | relative_url }}">
+  <script src="{{ '/dither.js' | relative_url }}" defer></script>
 
 </head>
 
 <body>
+  {% include banner.html %}
   <table
     style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
-          {% include banner.html %}
 {{ content }}
         </td>
       </tr>
