@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
+
+  <meta name="author" content="Joseph Allyndrée">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/images/favicon/eating_blue.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="stylesheet" type="text/css" href="{{ '/stylesheet.css' | relative_url }}">
+
+</head>
+
+<body>
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          {% include banner.html %}
+{{ content }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {% include footer.html %}
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+# The menu shown under the banner on every page.
+# To add a page: copy research.html to e.g. teaching.html, change its title
+# and content, then add it to this list.
+- title: Home
+  url: /
+- title: Research
+  url: /research.html
+- title: Publications
+  url: /publications.html

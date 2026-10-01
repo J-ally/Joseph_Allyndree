@@ -1,0 +1,8 @@
+# GitHub Pages builds the site with Jekyll using these settings.
+title: Joseph Allyndrée
+baseurl: /Joseph_Allyndree
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

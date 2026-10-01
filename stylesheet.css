@@ -150,7 +150,7 @@ span.highlight {
   background-color: #ffffd0;
 }
 
-/* Banner, menu and footer (rendered by site.js) */
+/* Banner, menu and footer (_includes/banner.html, _includes/footer.html) */
 .banner {
   display: flex;
   align-items: center;

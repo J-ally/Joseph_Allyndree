@@ -1,0 +1,20 @@
+<header class="banner">
+  <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=jqy3zjgAAAAJ&citpid=3"
+    alt="profile photo">
+  <div>
+    <p class="name">Joseph ALLYNDRÉE</p>
+    <p class="contact">
+      <a href="mailto:joseph.allyndree@inrae.fr">Email</a> &nbsp;/&nbsp;
+      <a href="{{ '/data/Joseph_ALLYNDREE_CV.pdf' | relative_url }}">CV</a> &nbsp;/&nbsp;
+      <a href="https://github.com/J-ally/">Github</a> &nbsp;/&nbsp;
+      <a href="https://scholar.google.com/citations?user=jqy3zjgAAAAJ&hl=fr">Google Scholar</a> &nbsp;/&nbsp;
+      <a href="https://hal.science/search/index/q/*/authIdHal_s/joseph-allyndree">HAL</a>
+    </p>
+  </div>
+</header>
+<!-- Menu entries come from _data/navigation.yml -->
+<nav class="site-nav">
+  {%- for item in site.data.navigation %}
+  <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+  {%- endfor %}
+</nav>
