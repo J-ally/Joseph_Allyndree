@@ -149,3 +149,84 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* Banner, menu and footer (rendered by site.js) */
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 2.5% 16px 2.5%;
+}
+
+.banner img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.banner .name {
+  padding-top: 0;
+  font-size: 34px;
+}
+
+.banner .contact {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  padding: 0 2.5%;
+  margin-bottom: 8px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.site-nav a {
+  padding: 12px 0 10px 0;
+  margin-bottom: -1px;
+  color: #555;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:focus,
+.site-nav a:hover {
+  color: #f09228;
+}
+
+.site-nav a.active {
+  color: #1772d0;
+  border-bottom-color: #1772d0;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  font-size: small;
+  color: #888;
+}
+
+@media (max-width: 520px) {
+  .banner {
+    gap: 16px;
+  }
+
+  .banner img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .banner .name {
+    font-size: 26px;
+  }
+}

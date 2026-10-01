@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Publications – Joseph Allyndrée</title>
+
+  <meta name="author" content="Joseph Allyndrée">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon/eating_blue.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+
+<body>
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <!-- Banner + menu -->
+          <script src="site.js"></script>
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <h2>Publications</h2>
+                  <p>
+                    You can also find my publications on
+                    <a href="https://scholar.google.com/citations?user=jqy3zjgAAAAJ&hl=fr">Google Scholar</a>
+                    and <a
+                      href="https://hal.science/search/index/?q=authIdHal_s%3Ajoseph-allyndree&rows=30&sort=producedDate_tdate+desc">HAL</a>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0px 20px 20px 20px;width:100%;vertical-align:middle">
+                  <div id="hal-publications-list">
+                    <p id="hal-loading" style="color:#888;font-style:italic;">Loading publications from HAL…</p>
+                  </div>
+                  <script>
+                    (function () {
+                      var API = 'https://api.hal.science/search/' +
+                        '?q=authIdHal_s:joseph-allyndree' +
+                        '&fl=title_s,authFullName_s,producedDate_s,journalTitle_s,conferenceTitle_s,docType_s,halId_s' +
+                        '&sort=producedDate_tdate+desc&rows=30&wt=json';
+
+                      var TYPE_LABEL = {
+                        ART: 'Journal article', COMM: 'Conference paper',
+                        POSTER: 'Poster', THESE: 'PhD thesis',
+                        REPORT: 'Technical report', COUV: 'Book chapter', OUV: 'Book'
+                      };
+
+                      fetch(API)
+                        .then(function (r) { return r.json(); })
+                        .then(function (data) {
+                          var docs = data.response.docs;
+                          var container = document.getElementById('hal-publications-list');
+                          var loadingEl = document.getElementById('hal-loading');
+                          if (loadingEl) loadingEl.remove();
+
+                          if (!docs || !docs.length) {
+                            var msg = document.createElement('p');
+                            msg.textContent = 'No publications found.';
+                            container.appendChild(msg);
+                            return;
+                          }
+
+                          docs.forEach(function (doc) {
+                            var year = (doc.producedDate_s || '').slice(0, 4);
+                            var title = (doc.title_s || ['Untitled'])[0];
+                            var authors = (doc.authFullName_s || []).join(', ');
+                            var venue = doc.journalTitle_s || doc.conferenceTitle_s || '';
+                            var type = TYPE_LABEL[doc.docType_s] || doc.docType_s || '';
+                            var url = 'https://hal.science/' + (doc.halId_s || '');
+
+                            var item = document.createElement('p');
+                            item.style.marginBottom = '14px';
+
+                            var link = document.createElement('a');
+                            link.href = url;
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
+                            link.textContent = title;
+                            link.style.fontWeight = '600';
+                            item.appendChild(link);
+                            item.appendChild(document.createElement('br'));
+
+                            var auth = document.createElement('span');
+                            auth.style.color = '#444';
+                            auth.textContent = authors;
+                            item.appendChild(auth);
+                            item.appendChild(document.createElement('br'));
+
+                            var meta = document.createElement('span');
+                            meta.style.color = '#888';
+                            meta.textContent = (venue ? venue + ' \u2014 ' : '') + year + (type ? ' \u00b7 ' + type : '');
+                            item.appendChild(meta);
+
+                            container.appendChild(item);
+
+                            var hr = document.createElement('hr');
+                            hr.style.border = 'none';
+                            hr.style.borderTop = '1px solid #e0e0e0';
+                            hr.style.margin = '0 0 14px 0';
+                            container.appendChild(hr);
+                          });
+                        })
+                        .catch(function () {
+                          var el = document.getElementById('hal-loading');
+                          if (el) el.textContent = 'Could not load publications. View them on HAL directly.';
+                        });
+                    }());
+                  </script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
