@@ -2,6 +2,13 @@
      data-shape (square, circle, triangle, diamond), data-pixel-size, data-density (roughly the share
      covered by dots, 0 to 1) and data-opacity (0 to 1). -->
 <header class="banner" data-dither data-ink="#bcd5f0" data-shape="square" data-pixel-size="4" data-density="0.35" data-opacity="1">
+  <!-- The dithering script is written into every page, as the banner's first child, so the browser can never show
+     the photo, name or menu without the dots: a separate file ran only after the page had appeared, and a script
+     after the banner ran too late when the page arrived in pieces (a slow connection); either way the banner
+     flashed white without its dots at each page change -->
+  <script>
+{% include dither.js %}
+  </script>
   <!-- The dithering spans the whole window and runs behind the menu; the photo, text and menu links stay in the
        page's 800px column -->
   <div class="banner-content">
@@ -30,10 +37,4 @@
     new ResizeObserver(() => banner.style.setProperty('--banner-content-height', content.offsetHeight + 'px'))
       .observe(content);
   })();
-</script>
-<!-- The dithering script is written into every page right after the banner, rather than loaded as a separate file,
-     so the dots are drawn before the page first shows: loaded separately, it ran only after the page had appeared,
-     and the banner flashed white without its dots at each page change -->
-<script>
-{% include dither.js %}
 </script>

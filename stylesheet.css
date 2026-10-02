@@ -188,7 +188,7 @@ span.highlight {
   line-height: 1.5;
 }
 
-/* Code in Markdown pages (e.g. teaching/programming-databases.md): `inline code`, and ```python fenced blocks,
+/* Code in Markdown pages (e.g. teaching/programming-databases/correction-td.md): `inline code`, and ```python fenced blocks,
    which Jekyll colours with Rouge (one <span> class per kind of token, styled below). Long lines scroll inside the
    block instead of widening the page on phones. */
 .page code {
@@ -206,14 +206,47 @@ span.highlight {
   background: #f6f8fa;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
-  line-height: 1.5;
+  line-height: 1.7;
   tab-size: 4;
 }
 
+/* As a block, the code sets the height of its lines by itself (1.7 × 14px): inline, the <pre>'s own 16px text made
+   each line a little taller than that, which left gaps between the indent guides below */
 .page pre code {
+  display: block;
   padding: 0;
   background: none;
   border-radius: 0;
+}
+
+/* Indent guides in ```python blocks, added by _includes/indent-guides.js: each group of 4 leading spaces is a box as
+   tall as the line, whose left edge draws the bar (on blank lines, the boxes are empty and 4 characters wide) */
+.indent-guide {
+  display: inline-block;
+  min-width: 4ch;
+  height: 1.7em; /* the line-height of .page pre */
+  vertical-align: top;
+  background: linear-gradient(#d0d7de, #d0d7de) no-repeat 0 0 / 1px 100%;
+}
+
+/* Collapsible corrections (<details markdown="1"> in correction-td.md): closed by default, the "Voir la correction"
+   line opens and closes the code block below it. */
+.page details {
+  margin: 0 0 24px 0;
+}
+
+.page summary {
+  cursor: pointer;
+  color: #1772d0;
+  margin-bottom: 10px;
+}
+
+.page summary:hover {
+  color: #f09228;
+}
+
+.page details pre {
+  margin-bottom: 0;
 }
 
 /* Colours: the "sas" theme from Pygments (SAS Studio's editor colours), see https://pygments.org/styles/ */

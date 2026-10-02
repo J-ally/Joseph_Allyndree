@@ -1,10 +1,12 @@
 // Animated Bayer-dithering background behind the banner (_includes/banner.html).
 // Click/tap the banner to make ripples.
 //
-// banner.html writes this script into the page right after the banner, so it
-// runs before the page is first shown and the dots never flash in late. Jekyll
-// reads the file as a Liquid template, so it must not contain two opening
-// braces in a row, nor an opening brace followed by a percent sign.
+// banner.html writes this script into the page as the banner's first child, so
+// the canvas exists before the photo, name and menu, and the ResizeObserver
+// below draws it again just before every paint as they arrive: the banner is
+// never shown without its dots. Jekyll reads the file as a Liquid template, so
+// it must not contain two opening braces in a row, nor an opening brace
+// followed by a percent sign.
 //
 // Adapted from https://github.com/zavalit/bayer-dithering-webgl-demo, rewritten
 // in plain WebGL2 so the site needs no build step and no Three.js. The look is
@@ -252,6 +254,8 @@ void main() {
     draw();
   }
   resize();
+  // Resize observers run after layout and before paint, so whenever more of
+  // the banner arrives the canvas is resized and drawn in the same frame
   new ResizeObserver(resize).observe(host);
 
   if (still) return; // prefers-reduced-motion: keep a single still frame

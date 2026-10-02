@@ -10,6 +10,7 @@ GitHub Pages builds the site with Jekyll on every push to `master`.
 - `_includes/banner.html`, `_includes/nav.html`, `_includes/footer.html`: the banner (photo, name, links), the menu and the footer
 - `_data/navigation.yml`: the menu entries
 - `_includes/dither.js`: the animated dithering behind the banner, written into each page by `_includes/banner.html` (its colour, dot shape, size, density and opacity are set on the `<header>` there)
+- `_includes/indent-guides.js`: the vertical bars at each indentation level in ```` ```python ```` code blocks, written into Markdown pages that have one by `_layouts/page.html`
 - `index.html`, `research.html`, `publications.html`: the content of each page
 - `teaching.md`: the Teaching page, in Markdown (the commented-out sections at the bottom are templates for students and teaching material)
 

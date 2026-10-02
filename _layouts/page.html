@@ -5,3 +5,9 @@ layout: default
 <div class="page">
 {{ content }}
 </div>
+{% if content contains 'language-python' %}
+<!-- Vertical bars at each indentation level in the ```python code blocks: see _includes/indent-guides.js -->
+<script>
+{% include indent-guides.js %}
+</script>
+{% endif %}

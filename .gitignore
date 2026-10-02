@@ -3,3 +3,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 Gemfile.lock
+
+# Course PDFs shared with students through eCampus only, not published on the site
+data/AgroParisTech_Poly Python_2026.pdf
+data/AgroParisTech_TD Python_2026.pdf
