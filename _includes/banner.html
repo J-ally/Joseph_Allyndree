@@ -1,4 +1,4 @@
-<!-- Animated dithering behind the banner: see dither.js. Change the look with data-ink (#rrggbb),
+<!-- Animated dithering behind the banner: see _includes/dither.js. Change the look with data-ink (#rrggbb),
      data-shape (square, circle, triangle, diamond), data-pixel-size, data-density (roughly the share
      covered by dots, 0 to 1) and data-opacity (0 to 1). -->
 <header class="banner" data-dither data-ink="#bcd5f0" data-shape="square" data-pixel-size="4" data-density="0.35" data-opacity="1">
@@ -31,4 +31,9 @@
       .observe(content);
   })();
 </script>
-
+<!-- The dithering script is written into every page right after the banner, rather than loaded as a separate file,
+     so the dots are drawn before the page first shows: loaded separately, it ran only after the page had appeared,
+     and the banner flashed white without its dots at each page change -->
+<script>
+{% include dither.js %}
+</script>

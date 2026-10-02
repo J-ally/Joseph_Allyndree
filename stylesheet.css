@@ -188,6 +188,46 @@ span.highlight {
   line-height: 1.5;
 }
 
+/* Code in Markdown pages (e.g. teaching/programming-databases.md): `inline code`, and ```python fenced blocks,
+   which Jekyll colours with Rouge (one <span> class per kind of token, styled below). Long lines scroll inside the
+   block instead of widening the page on phones. */
+.page code {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 14px;
+  padding: 2px 5px;
+  background: #f6f8fa;
+  border-radius: 4px;
+}
+
+.page pre {
+  margin: 0 0 24px 0;
+  padding: 14px 16px;
+  overflow-x: auto;
+  background: #f6f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+.page pre code {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+/* Colours: the "sas" theme from Pygments (SAS Studio's editor colours), see https://pygments.org/styles/ */
+.highlight { color: #000; }
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .ch, .highlight .cs, .highlight .cp { color: #080; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kt, .highlight .nb, .highlight .bp { color: #2c2cff; }
+.highlight .kr { color: #353580; font-weight: bold; }
+.highlight .kc, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #2c2cff; font-weight: bold; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .sd,
+.highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss, .highlight .dl { color: #800080; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo, .highlight .mb, .highlight .il { color: #2c8553; font-weight: bold; }
+.highlight .nf, .highlight .fm { font-weight: bold; font-style: italic; }
+.highlight .err { color: inherit; background: none; }
+
 /* Banner, menu and footer (_includes/banner.html, _includes/nav.html, _includes/footer.html) */
 /* The negative top and side margins cancel the body's default 8px margin, so the dithering reaches the window's
    top and sides.
@@ -213,7 +253,7 @@ span.highlight {
   padding: 24px min(20px, 2.5%) 16px min(20px, 2.5%);
 }
 
-/* Dithering canvas added by dither.js, behind the banner's content */
+/* Dithering canvas added by _includes/dither.js, behind the banner's content */
 .banner > canvas {
   position: absolute;
   inset: 0;

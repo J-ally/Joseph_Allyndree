@@ -7,7 +7,7 @@ title: Teaching
 
 ### Courses
 
-- **Computer Science – Programming and Databases** (84 hours) - 2026–2027  
+- **[Computer Science – Programming and Databases]({{ '/teaching/programming-databases.html' | relative_url }})** (84 hours) - 2026–2027  
   Contractual teacher-researcher, [*AgroParisTech*](https://www.agroparistech.fr/).
 
 ### Supervised students and projects

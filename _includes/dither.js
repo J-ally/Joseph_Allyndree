@@ -1,6 +1,11 @@
 // Animated Bayer-dithering background behind the banner (_includes/banner.html).
 // Click/tap the banner to make ripples.
 //
+// banner.html writes this script into the page right after the banner, so it
+// runs before the page is first shown and the dots never flash in late. Jekyll
+// reads the file as a Liquid template, so it must not contain two opening
+// braces in a row, nor an opening brace followed by a percent sign.
+//
 // Adapted from https://github.com/zavalit/bayer-dithering-webgl-demo, rewritten
 // in plain WebGL2 so the site needs no build step and no Three.js. The look is
 // set by attributes on the banner element:
@@ -211,8 +216,18 @@ void main() {
 
   /* ---------- drawing -------------------------------------- */
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const start = performance.now();
-  const now = () => (performance.now() - start) / 1000;
+  // The animation's clock carries on from page to page (within a tab), so the
+  // new page shows the same dots as the one just left instead of jumping back
+  // to the first frame. It restarts after an hour: the noise in the shader
+  // breaks up when the time gets very large.
+  const clock = () => performance.timeOrigin + performance.now();
+  let start = clock();
+  try {
+    const saved = Number(sessionStorage.getItem('dither-start'));
+    if (saved > start - 3600e3 && saved <= start) start = saved;
+    else sessionStorage.setItem('dither-start', start);
+  } catch (e) { /* storage blocked: start from the first frame */ }
+  const now = () => (clock() - start) / 1000;
 
   const clickPos = new Float32Array(MAX_CLICKS * 2).fill(-1);
   const clickTimes = new Float32Array(MAX_CLICKS);
