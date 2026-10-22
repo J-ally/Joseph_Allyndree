@@ -188,6 +188,20 @@ span.highlight {
   line-height: 1.5;
 }
 
+/* Gold pill for a prize won by a supervised thesis (<span class="award"> in teaching.md) */
+.award {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 9px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #8a5a00;
+  background: #fff4d6;
+  border: 1px solid #f0c24b;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 /* Code in Markdown pages (e.g. teaching/programming-databases/correction-td.md): `inline code`, and ```python fenced blocks,
    which Jekyll colours with Rouge (one <span> class per kind of token, styled below). Long lines scroll inside the
    block instead of widening the page on phones. */
