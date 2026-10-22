@@ -10,12 +10,6 @@ title: Teaching
 - **[Computer Science – Programming and Databases]({{ '/teaching/programming-databases.html' | relative_url }})** (84 hours) - 2026–2027  
   Contractual teacher-researcher, [*AgroParisTech*](https://www.agroparistech.fr/).
 
-
-### Workshops
-
-- **[MLOps pour la reproductibilité et la traçabilité des expériences d’apprentissage]({{ '/workshops/MLOps.html' | relative_url }})** (4 hours) - 2026  
-  Co-presented with [Julian Agudelo](https://julagu.github.io/) for the [State of The R](https://stateofther.netlify.app/) working group.
-
 ### Supervised students and projects
 
 - Clémence Harrouet, Veterinary Thesis, 2025: *A study of the impact of lameness on the rising and lying-down behaviors of dairy cows. Oniris Nantes.*     

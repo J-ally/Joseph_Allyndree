@@ -1,11 +1,11 @@
 ---
 layout: page
 title: MLOps for Reproducibility and Traceability of Machine Learning Experiments
-# Keeps "Teaching" highlighted in the menu on this page
-parent: /teaching.html
+# Keeps "Presentations" highlighted in the menu on this page
+parent: /presentations/presentations.html
 ---
 
-[← Back to Teaching]({{ '/teaching.html' | relative_url }})
+[← Back to Presentations]({{ '/presentations/presentations.html' | relative_url }})
 
 ## MLOps for Reproducibility and Traceability of Machine Learning Experiments
 

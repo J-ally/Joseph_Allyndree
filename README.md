@@ -13,6 +13,7 @@ GitHub Pages builds the site with Jekyll on every push to `master`.
 - `_includes/indent-guides.js`: the vertical bars at each indentation level in ```` ```python ```` code blocks, written into Markdown pages that have one by `_layouts/page.html`
 - `index.html`, `research.html`, `publications.html`: the content of each page
 - `teaching.md`: the Teaching page, in Markdown (the commented-out sections at the bottom are templates for students and teaching material)
+- `presentations/presentations.md`: the Presentations page (workshops, talks), in Markdown; each workshop has its own page in `presentations/`
 
 To add a page, copy `research.html` to a new file, change its `title` and content, and add it to `_data/navigation.yml`.
 
