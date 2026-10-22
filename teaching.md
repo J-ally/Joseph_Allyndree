@@ -13,7 +13,8 @@ title: Teaching
 
 ### Workshops
 
-- **[MLOps pour la reproductibilité et la traçabilité des expériences d’apprentissage]({{ '/workshops/MLOps.html' | relative_url }})** (4 hours) - 2026
+- **[MLOps pour la reproductibilité et la traçabilité des expériences d’apprentissage]({{ '/workshops/MLOps.html' | relative_url }})** (4 hours) - 2026  
+  Co-presented with [Julian Agudelo](https://julagu.github.io/) for the [State of The R](https://stateofther.netlify.app/) working group.
 
 ### Supervised students and projects
 
