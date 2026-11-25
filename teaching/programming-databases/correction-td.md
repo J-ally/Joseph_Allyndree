@@ -13,3 +13,4 @@ parent: /teaching.html
 
 - **[Correction des TDs 1 & 2]({{ '/teaching/programming-databases/correction-td/td-1-2.html' | relative_url }})** : tranches d'âge, devine un nombre, les stars, tri par insertion, listes entrelacées, lancer de dés, déploie et compresse ADN.
 - **[Correction des TDs 3 & 4]({{ '/teaching/programming-databases/correction-td/td-3-4.html' | relative_url }})** : lire et copier une fable, fichiers, données sur le maïs (DIY et PRO), graphiques.
+- **[Correction du TD 5]({{ '/teaching/programming-databases/correction-td/td-5.html' | relative_url }})** : bases de données SQL (base `client_commande`), requêtes simples sur une table, requêtes avec jointures.

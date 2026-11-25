@@ -263,6 +263,46 @@ span.highlight {
   margin-bottom: 0;
 }
 
+/* Markdown tables (e.g. the query results in correction-td/td-5.md): a border around every cell. Wide tables scroll
+   inside their own box instead of widening the page on phones. */
+.page table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 0 24px 0;
+  border-collapse: collapse;
+}
+
+.page th,
+.page td {
+  padding: 6px 13px;
+  border: 1px solid #d0d7de;
+  font-size: 14px;
+}
+
+.page th {
+  font-weight: 700;
+}
+
+/* "> ..." notes in Markdown pages (e.g. the "Attention :" remarks in correction-td/td-5.md): a soft green box with a darker
+   bar on its left */
+.page blockquote {
+  margin: 0 0 24px 0;
+  padding: 10px 16px;
+  background: #eef7ef;
+  border-left: 4px solid #8fc79a;
+  color: #34503a;
+}
+
+.page blockquote > :first-child {
+  margin-top: 0;
+}
+
+.page blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 /* Colours: the "sas" theme from Pygments (SAS Studio's editor colours), see https://pygments.org/styles/ */
 .highlight { color: #000; }
 .highlight .c, .highlight .c1, .highlight .cm, .highlight .ch, .highlight .cs, .highlight .cp { color: #080; font-style: italic; }
