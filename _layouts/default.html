@@ -17,16 +17,10 @@
 
 <body>
   {% include banner.html %}
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+  <!-- The page's 800px column: see .page-column in stylesheet.css for why it is not a <table> -->
+  <main class="page-column">
 {{ content }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  </main>
   {% include footer.html %}
 </body>
 

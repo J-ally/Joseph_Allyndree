@@ -157,6 +157,18 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+/* The page's 800px column, around every page's content (_layouts/default.html). It used to be a <table>, as in the
+   original template, but a table grows to fit its widest content: one long line of code or a wide results table
+   (e.g. in correction-td/td-5.md) made the whole page wider than a phone's screen, so the phone zoomed out to show
+   it all, leaving the banner small in a corner. As a block, the column stays as wide as the screen, and the code
+   blocks and tables scroll sideways inside their own box. flow-root keeps the margins of the content inside the
+   column, as the table cell did, so nothing moves on a computer. */
+.page-column {
+  display: flow-root;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* Pages written in Markdown (_layouts/page.html, e.g. teaching.md): the ## title, the ### section titles and the
    lists under them */
 .page {
